@@ -9,6 +9,10 @@ class ExperienceController {
 
         const exp = await repository.find();
 
+        if(!exp){
+            return res.send([""]);
+        }
+
         return res.json(exp);
     };
 

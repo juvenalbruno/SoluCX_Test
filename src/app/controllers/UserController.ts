@@ -9,6 +9,10 @@ class UseController {
 
         const users = await repository.find();
 
+        if(!users){
+            return res.send([""]);
+        }
+
         return res.json(users);
     };
 

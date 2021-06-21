@@ -9,6 +9,10 @@ class AssessmentExperienceController {
 
         const ass = await repository.find();
 
+        if(!ass){
+            return res.send([""]);
+        }
+
         return res.json(ass);
     };
 
