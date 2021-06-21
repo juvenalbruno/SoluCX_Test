@@ -17,7 +17,6 @@ export class CreateUsersTable1624131797505 implements MigrationInterface {
                 {
                     name: 'name',
                     type: 'varchar',
-                    isUnique: true,
                 },
                 {
                     name: 'email',
@@ -27,7 +26,6 @@ export class CreateUsersTable1624131797505 implements MigrationInterface {
                 {
                     name: 'tel',
                     type: 'varchar',
-                    isUnique: true,
                 },
                 {
                     name: 'cpf',
