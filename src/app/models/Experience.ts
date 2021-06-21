@@ -6,7 +6,7 @@ class Experience {
     id: number;
 
     @Column('uuid')
-    id_Client: string;
+    id_client: string;
 
     @Column()
     @BeforeUpdate()

@@ -3,7 +3,7 @@ import { getRepository } from 'typeorm';
 
 import Experience from '../models/Experience';
 
-class UseController {
+class ExperienceController {
     async index(req: Request, res: Response) {
         const repository = getRepository(Experience);
 
@@ -15,10 +15,10 @@ class UseController {
     async create(req: Request, res: Response) {
         const repository = getRepository(Experience);
 
-        const { id_Client, loja, colaborador, date, valor } = req.body;
+        const { id_client, loja, colaborador, date, valor } = req.body;
 
-        if(!id_Client || typeof id_Client == undefined || id_Client == null ){
-            return res.send('Erro no campo "id_Client"');
+        if(!id_client || typeof id_client == undefined || id_client == null ){
+            return res.send('Erro no campo "id_client"');
         };
         if(!loja || typeof loja == undefined || loja == null ){
             return res.send('Erro no campo "loja"');
@@ -33,12 +33,13 @@ class UseController {
             return res.send('Erro no campo "valor"');
         };
 
-        const exp = repository.create({ id_Client, loja, colaborador, date, valor});
+        const exp = repository.create({ id_client, loja, colaborador, date, valor});
 
         await repository.save(exp);
 
         return res.json(exp);
-    }
+    };
+
     async update(req: Request, res: Response) {
         const repository = getRepository(Experience);
 
@@ -53,7 +54,7 @@ class UseController {
         const exx = await repository.update(id, { loja, colaborador, date, valor });
 
         return res.sendStatus(200);
-    }
+    };
 }
 
-export default new UseController();
+export default new ExperienceController();
