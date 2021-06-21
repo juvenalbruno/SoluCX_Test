@@ -62,7 +62,7 @@ class UseController {
 
         const { id, email, tel, } = req.body;
 
-        const userExists = await repository.find({ where: { id }});
+        const userExists = await repository.findOne({ where: { id }});
 
         if(!userExists) {
             return res.sendStatus(404);
