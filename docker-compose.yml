@@ -1,0 +1,27 @@
+version: "3.7"
+
+services: 
+    
+    db:
+        container_name: db_app
+        image: postgres
+        restart: always
+        environment: 
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=solucxData
+        ports: 
+            - "5432:5432"
+        volumes: 
+            - ./pgdata:/var/lib/postgresql/data
+
+    app:
+        container_name: my_app
+        build: .
+        command: yarn start
+        volumes:
+            - .:/usr/src/app
+        depends_on:
+            - db
+        ports: 
+            - "3000:3000"
