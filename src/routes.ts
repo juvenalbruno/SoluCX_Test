@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import AssessmentExperienceController from './app/controllers/AssessmentExperienceController';
 import ExperienceController from './app/controllers/ExperienceController';
 import UserController from './app/controllers/UserController';
 
@@ -11,8 +12,12 @@ router
     .put('/users', UserController.update)
 
 router
-    .get('/exp', ExperienceController.index)
-    .post('/exp', ExperienceController.create)
-    .put('/exp', ExperienceController.update)
+    .get('/experience', ExperienceController.index)
+    .post('/experience', ExperienceController.create)
+    .put('/experience', ExperienceController.update)
+
+router
+    .get('/assessment', AssessmentExperienceController.index)
+    .post('/assessment', AssessmentExperienceController.create)
 
 export default router;

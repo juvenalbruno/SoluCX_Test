@@ -2,7 +2,7 @@ import { Entity, PrimaryColumn, Column, BeforeUpdate } from 'typeorm';
 
 @Entity('experience')
 class Experience {
-    @PrimaryColumn('int')
+    @PrimaryColumn('uuid')
     id: number;
 
     @Column('uuid')
