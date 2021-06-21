@@ -1,15 +1,15 @@
-import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity('assessment')
 class Assessment {
-    @PrimaryColumn('uudi')
-    id: number;
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
     
     @Column('uuid')
     id_client: string;
     
     @Column('uuid')
-    id_experience: number;
+    id_experience: string;
     
     @Column()
     note: number;

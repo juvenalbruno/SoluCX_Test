@@ -1,9 +1,9 @@
-import { Entity, PrimaryColumn, Column, BeforeUpdate } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BeforeUpdate } from 'typeorm';
 
 @Entity('experience')
 class Experience {
-    @PrimaryColumn('uuid')
-    id: number;
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
 
     @Column('uuid')
     id_client: string;
