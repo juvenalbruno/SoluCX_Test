@@ -9,8 +9,10 @@ export class AssessmentExperience1624295311237 implements MigrationInterface {
             columns: [
                 {
                     name: 'id',
-                    type: 'int',
+                    type: 'uuid',
                     isPrimary: true,
+                    generationStrategy: 'uuid',
+                    default: 'uuid_generate_v4()',
                 },
                 {
                     name: 'id_client',
@@ -18,7 +20,7 @@ export class AssessmentExperience1624295311237 implements MigrationInterface {
                 },
                 {
                     name: 'id_experience',
-                    type: 'ind',
+                    type: 'uuid',
                 },
                 {
                     name: 'note',
