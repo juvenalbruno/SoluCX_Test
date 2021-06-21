@@ -12,17 +12,29 @@ class UseController {
         return res.json(users);
     };
 
-    async store(req: Request, res: Response) {
+    async create(req: Request, res: Response) {
         const repository = getRepository(User);
         
         const { name, email, tel, cpf  } = req.body;
 
+        if(!name || typeof name == undefined || name == null ){
+            return res.send('Erro no campo "name"');
+        };
+        if(!email || typeof email == undefined || email == null ){
+            return res.send('Erro no campo "email"');
+        };
+        if(!tel || typeof tel == undefined || tel == null ){
+            return res.send('Erro no campo "tel"');
+        };
+        if(!cpf || typeof cpf == undefined || cpf == null ){
+            return res.send('Erro no campo "cpf"');
+        };
+
         const userExists = await repository.findOne({ where: { cpf } });
-
         if(userExists){
-            return res.sendStatus(409);
-        }
 
+            return res.sendStatus(400);
+        }
         const user = repository.create({ name, email, tel, cpf });
         await repository.save(user);
 

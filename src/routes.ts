@@ -5,7 +5,7 @@ const router = Router();
 
 router
     .get('/users', UserController.index)
-    .post('/users', UserController.store)
+    .post('/users', UserController.create)
     .delete('/users', UserController.delete)
     .put('/users', UserController.update)
 
