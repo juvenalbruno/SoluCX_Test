@@ -8,12 +8,15 @@
 ### Iniciando 
 
 ```bash
-yarn install # ou npm install para instalar as dependencias na maquina
+yarn install # ou npm install para instalar as dependencias na maquina para modo desenvolvedor
+
+----
 
 docker-compose up
 # levantará o docker com o banco de dados e a aplicação.
+
+yarn typeorm migration:run
 # Ele aplicará as migrations do banco
-# e iniciará o node com a api
 ```
 
 ### Rota e Formato json esperado:
@@ -21,9 +24,9 @@ docker-compose up
 * Cliente ( GET | POST | PUT | DELETE ):
 
 ``` bash
-# >> http://localhost:3000/users
+>> http://localhost:3000/users
 
-# >> POST:
+>> POST:
 # {
 #	"name": "",
 #	"email": "",
@@ -31,14 +34,14 @@ docker-compose up
 #	"cpf":
 # }
 
-# >> PUT:
+>> PUT:
 # {
 #	"id": "",
 #	"email": "",
 #	"tel": 
 # }
 
-# >> DELETE:
+>> DELETE:
 # {
 #	"id": ""
 # }
@@ -47,9 +50,9 @@ docker-compose up
 * Experiencia ( GET | POST | PUT ):
 
 ``` bash
-# >> http://localhost:3000/experience
+>> http://localhost:3000/experience
 
-# >> POST:
+>> POST:
 # {
 #	"id_client": "",
 #	"loja": "",
@@ -58,7 +61,7 @@ docker-compose up
 #	"valor": 
 # }
 
-#>> PUT:
+>> PUT:
 # {
 #	"id": "",
 #	"loja": "",
@@ -72,9 +75,9 @@ docker-compose up
 * Avaliação Experiencia ( POST | GET ):
 
 ``` bash
-# >> http://localhost:3000/assessment
+>> http://localhost:3000/assessment
 
-# >> POST:
+>> POST:
 # {
 #	"id_client": "",
 #	"id_experience": "",
