@@ -19,58 +19,66 @@ docker-compose up
 ### Rota e Formato json esperado:
 
 * Cliente ( GET | POST | PUT | DELETE ):
-##### >> http://localhost:3000/users
 
-##### >> POST:
-##### {
-#####	"name": "",
-#####	"email": "",
-#####	"tel": ,
-#####	"cpf":
-##### }
+``` bash
+# >> http://localhost:3000/users
 
-##### >> PUT:
-##### {
-#####	"id": "",
-#####	"email": "",
-#####	"tel": 
-##### }
+# >> POST:
+# {
+#	"name": "",
+#	"email": "",
+#	"tel": ,
+#	"cpf":
+# }
 
-##### >> DELETE:
-##### {
-#####	"id": ""
-##### }
+# >> PUT:
+# {
+#	"id": "",
+#	"email": "",
+#	"tel": 
+# }
 
+# >> DELETE:
+# {
+#	"id": ""
+# }
+```
 
 * Experiencia ( GET | POST | PUT ):
-##### >> http://localhost:3000/experience
 
-##### >> POST:
-##### {
-#####	"id_client": "",
-#####	"loja": "",
-#####	"colaborador": "",
-#####	"date": "",
-#####	"valor": 
-##### }
+``` bash
+# >> http://localhost:3000/experience
 
-#####>> PUT:
-##### {
-#####	"id": "",
-#####	"loja": "",
-#####	"colaborador": "",
-#####	"date": "",
-#####	"valor": 
-##### }
+# >> POST:
+# {
+#	"id_client": "",
+#	"loja": "",
+#	"colaborador": "",
+#	"date": "",
+#	"valor": 
+# }
+
+#>> PUT:
+# {
+#	"id": "",
+#	"loja": "",
+#	"colaborador": "",
+#	"date": "",
+#	"valor": 
+# }
+```
 
 
 * Avaliação Experiencia ( POST | GET ):
-##### >> http://localhost:3000/assessment
 
-##### >> POST:
-##### {
-#####	"id_client": "",
-#####	"id_experience": "",
-#####	"note": ,
-#####	"comment": ""
-##### }
+``` bash
+# >> http://localhost:3000/assessment
+
+# >> POST:
+# {
+#	"id_client": "",
+#	"id_experience": "",
+#	"note": ,
+#	"comment": ""
+# }
+```
